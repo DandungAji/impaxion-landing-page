@@ -45,7 +45,7 @@ const ServicesSection: React.FC = () => {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
-          className="absolute h-full w-full opacity-60"
+          className="absolute h-full w-full opacity-50"
         />
       ),
       className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
@@ -63,7 +63,7 @@ const ServicesSection: React.FC = () => {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
-          className="absolute h-full w-full opacity-60"
+          className="absolute h-full w-full opacity-50"
         />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
@@ -81,7 +81,7 @@ const ServicesSection: React.FC = () => {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
-          className="absolute h-full w-full opacity-60"
+          className="absolute h-full w-full opacity-50"
         />
       ),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
@@ -99,7 +99,7 @@ const ServicesSection: React.FC = () => {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
-          className="absolute h-full w-full opacity-60"
+          className="absolute h-full w-full opacity-50"
         />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
@@ -117,7 +117,7 @@ const ServicesSection: React.FC = () => {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: "cover" }}
-          className="absolute h-full w-full opacity-60"
+          className="absolute h-full w-full opacity-50"
         />
       ),
       className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",

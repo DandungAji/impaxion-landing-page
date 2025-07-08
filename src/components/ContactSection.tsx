@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,22 +11,13 @@ import { useToast } from "@/hooks/use-toast";
 const ContactSection: React.FC = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const [scrollY, setScrollY] = useState(0);
+  // State dan useEffect untuk scrollY telah dihapus untuk optimasi performa
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -49,27 +40,18 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Enhanced Background with parallax */}
+    <section
+      id="contact"
+      className="py-20 relative overflow-hidden scroll-mt-28"
+    >
       <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900 to-black">
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            transform: `translateY(${scrollY * 0.1}px)`,
-          }}
-        >
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(220,38,38,0.1),transparent_70%)]" />
         </div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Enhanced Header */}
-        <div
-          className="text-center mb-32 animate-fade-in"
-          style={{
-            transform: `translateY(${scrollY * 0.05}px)`,
-          }}
-        >
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-6 elegant-font">
             {t("contact.title")}
           </h2>
@@ -81,12 +63,7 @@ const ContactSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Enhanced Contact Form */}
-          <Card
-            className="glass-card animate-slide-in-left border-red-500/20"
-            style={{
-              transform: `translateY(${scrollY * 0.02}px)`,
-            }}
-          >
+          <Card className="glass-card bg-foreground animate-slide-in-left border-red-500/20">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-white elegant-font">
                 Send us a message
@@ -150,13 +127,8 @@ const ContactSection: React.FC = () => {
           </Card>
 
           {/* Enhanced Contact Information */}
-          <div
-            className="space-y-8 animate-slide-in-right"
-            style={{
-              transform: `translateY(${scrollY * 0.02}px)`,
-            }}
-          >
-            <Card className="glass-card border-red-500/20">
+          <div className="space-y-8 animate-slide-in-right">
+            <Card className="glass-card bg-foreground border-red-500/20">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-white elegant-font">
                   {t("contact.info.title")}
@@ -202,7 +174,7 @@ const ContactSection: React.FC = () => {
             </Card>
 
             {/* Enhanced Additional Info Card */}
-            <Card className="glass-card border-red-500/20">
+            <Card className="glass-card bg-foreground border-red-500/20">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-glow">
                   <span className="text-white text-2xl">🚀</span>
