@@ -5,10 +5,8 @@ import dynamic from "next/dynamic"; // 1. Impor 'dynamic' untuk memuat komponen 
 import { useLanguage } from "../contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 
-// 2. Muat komponen Spline secara dinamis untuk performa optimal
-// Ini akan mencegahnya memblokir render awal halaman.
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false, // Pastikan komponen ini hanya dirender di sisi klien
+  ssr: false,
 });
 
 interface HeroSectionProps {
@@ -17,7 +15,6 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
   const { t } = useLanguage();
-  // 'useState' dan 'useEffect' untuk 'scrollY' telah dihapus untuk menghilangkan parallax yang berat
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -43,9 +40,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
 
-      {/* 3. Atribut 'style' untuk transform parallax dihapus dari container utama */}
       <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        {/* Kolom Kiri: Teks dan Tombol */}
         <div className="space-y-8 animate-slide-in-left">
           <div className="space-y-6">
             <h1 className="text-6xl md:text-8xl font-bold elegant-font">
@@ -82,18 +77,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
           </div>
         </div>
 
-        {/* 4. Kolom Kanan: Tambahkan div untuk menampung scene Spline */}
         <div className="relative h-[400px] lg:h-[500px] animate-fade-in">
           <Spline scene="https://prod.spline.design/Mr0SeX4k7SfO4xNl/scene.splinecode" />
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
+      {/* Enhanced Scroll Indicator
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center hover:border-red-500 transition-colors duration-300">
           <div className="w-1 h-3 bg-red-500 rounded-full mt-2 animate-pulse" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

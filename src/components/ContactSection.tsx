@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPinned, Rocket } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -136,8 +137,8 @@ const ContactSection: React.FC = () => {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:bg-red-500/10 transition-colors duration-300 border border-red-500/20">
-                  <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center">
-                    <span className="text-white">📧</span>
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center text-white">
+                    <Mail />
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
@@ -148,8 +149,8 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:bg-red-500/10 transition-colors duration-300 border border-red-500/20">
-                  <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center">
-                    <span className="text-white">📞</span>
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center text-white">
+                    <Phone />
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
@@ -160,8 +161,8 @@ const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:bg-red-500/10 transition-colors duration-300 border border-red-500/20">
-                  <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center">
-                    <span className="text-white">📍</span>
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center text-white">
+                    <MapPinned />
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Location</p>
@@ -176,8 +177,8 @@ const ContactSection: React.FC = () => {
             {/* Enhanced Additional Info Card */}
             <Card className="glass-card bg-foreground border-red-500/20">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-glow">
-                  <span className="text-white text-2xl">🚀</span>
+                <div className="w-16 h-16 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-glow text-white">
+                  <Rocket />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 elegant-font">
                   Ready to innovate?
