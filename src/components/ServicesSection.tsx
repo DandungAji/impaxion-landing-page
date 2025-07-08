@@ -1,14 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Image from "next/image"; // Diimpor untuk optimasi
 import { useLanguage } from "../contexts/LanguageContext";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { Timeline } from "./ui/timeline";
 
@@ -21,116 +15,13 @@ import {
 } from "lucide-react";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 
-interface ParticleStyle {
-  left: string;
-  top: string;
-  animationDelay: string;
-}
+// Tidak lagi memerlukan ParticleStyle, useState, dan useEffect untuk scroll
+// karena efek yang berat telah dihilangkan.
 
 const ServicesSection: React.FC = () => {
   const { t } = useLanguage();
-  const [scrollY, setScrollY] = useState(0);
-  const [particles, setParticles] = useState<ParticleStyle[]>([]);
 
-  const features = [
-    {
-      Icon: CodeXml,
-      name: t("services.web.title"),
-      description: t("services.web.description"),
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <img
-          src="/images/web-dev.jpg"
-          alt="Web Development"
-          className="absolute h-full w-full object-cover opacity-60"
-        />
-      ),
-      className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-    },
-    {
-      Icon: Camera,
-      name: t("services.photo.title"),
-      description: t("services.photo.description"),
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <img
-          src="/images/photo.jpg"
-          alt="Photography"
-          className="absolute h-full w-full object-cover opacity-60"
-        />
-      ),
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
-    },
-    {
-      Icon: TabletSmartphone,
-      name: t("services.mobile.title"),
-      description: t("services.mobile.description"),
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <img
-          src="/images/mob-dev.jpg"
-          alt="Mobil Development"
-          className="absolute h-full w-full object-cover opacity-60"
-        />
-      ),
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
-    },
-    {
-      Icon: CircuitBoard,
-      name: t("services.pcb.title"),
-      description: t("services.pcb.description"),
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <img
-          src="/images/pcb.jpg"
-          alt="PCB Design"
-          className="absolute h-full w-full object-cover opacity-60"
-        />
-      ),
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
-    },
-    {
-      Icon: Tangent,
-      name: t("services.ui.title"),
-      description: t("services.ui.description"),
-      href: "/",
-      cta: "Learn more",
-      background: (
-        <img
-          src="/images/ui-design.png"
-          alt="UI/UX Design"
-          className="absolute h-full w-full object-cover opacity-60"
-        />
-      ),
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
-    },
-  ];
-
-  useEffect(() => {
-    const generateParticles = () => {
-      const newParticles = Array.from({ length: 15 }).map(() => ({
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 6}s`,
-      }));
-      setParticles(newParticles);
-    };
-    generateParticles();
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  // Fungsi safeTranslate tetap dipertahankan
   const safeTranslate = (key: string) => {
     try {
       return t(key) || key;
@@ -139,6 +30,99 @@ const ServicesSection: React.FC = () => {
       return key;
     }
   };
+
+  const features = [
+    {
+      Icon: CodeXml,
+      name: safeTranslate("services.web.title"),
+      description: safeTranslate("services.web.description"),
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src="/images/web-dev.jpg"
+          alt="Web Development"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectFit: "cover" }}
+          className="absolute h-full w-full opacity-60"
+        />
+      ),
+      className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    },
+    {
+      Icon: Camera,
+      name: safeTranslate("services.photo.title"),
+      description: safeTranslate("services.photo.description"),
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src="/images/photo.jpg"
+          alt="Photography"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectFit: "cover" }}
+          className="absolute h-full w-full opacity-60"
+        />
+      ),
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+    },
+    {
+      Icon: TabletSmartphone,
+      name: safeTranslate("services.mobile.title"),
+      description: safeTranslate("services.mobile.description"),
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src="/images/mob-dev.jpg"
+          alt="Mobile Development"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectFit: "cover" }}
+          className="absolute h-full w-full opacity-60"
+        />
+      ),
+      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+    },
+    {
+      Icon: CircuitBoard,
+      name: safeTranslate("services.pcb.title"),
+      description: safeTranslate("services.pcb.description"),
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src="/images/pcb.jpg"
+          alt="PCB Design"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectFit: "cover" }}
+          className="absolute h-full w-full opacity-60"
+        />
+      ),
+      className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+    },
+    {
+      Icon: Tangent,
+      name: safeTranslate("services.ui.title"),
+      description: safeTranslate("services.ui.description"),
+      href: "/",
+      cta: "Learn more",
+      background: (
+        <Image
+          src="/images/ui-design.png"
+          alt="UI/UX Design"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectFit: "cover" }}
+          className="absolute h-full w-full opacity-60"
+        />
+      ),
+      className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+    },
+  ];
 
   const data = [
     {
@@ -150,14 +134,14 @@ const ServicesSection: React.FC = () => {
             specifications to understand your vision and objectives.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/images/consultation.jpg"
               alt="Consultation Step"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/images/consultation-1.jpg"
               alt="Consultation Step"
               width={500}
@@ -168,6 +152,7 @@ const ServicesSection: React.FC = () => {
         </div>
       ),
     },
+    // ... (Repeat the same Image component for other data items)
     {
       title: "Planning",
       content: (
@@ -177,14 +162,14 @@ const ServicesSection: React.FC = () => {
             and technical preparation for optimal results.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/images/planning.jpg"
               alt="Planning Step"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/images/planning-1.jpg"
               alt="Planning Step"
               width={500}
@@ -204,14 +189,14 @@ const ServicesSection: React.FC = () => {
             techniques to capture or develop your project.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/images/execution.jpg"
               alt="Execution Step"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/images/execution-1.jpg"
               alt="Execution Step"
               width={500}
@@ -231,14 +216,14 @@ const ServicesSection: React.FC = () => {
             polished final products that exceed expectations.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/images/post-production.jpg"
               alt="Post Production Step"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/images/post-production-1.jpg"
               alt="Post Production Step"
               width={500}
@@ -258,14 +243,14 @@ const ServicesSection: React.FC = () => {
             documentation for technical services.
           </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="/images/delivery.jpg"
               alt="Delivery Step"
               width={500}
               height={500}
               className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
             />
-            <img
+            <Image
               src="/images/delivery-1.jpg"
               alt="Delivery Step"
               width={500}
@@ -280,47 +265,12 @@ const ServicesSection: React.FC = () => {
 
   return (
     <section id="services" className="py-20 relative">
-      {/* Enhanced Background with parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black">
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            transform: `translateY(${scrollY * 0.2}px)`,
-          }}
-        >
-          {particles.map((particle, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-red-500 rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 6}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Geometric background elements */}
-        <div
-          className="absolute inset-0 opacity-3"
-          style={{
-            transform: `translateY(${scrollY * 0.15}px)`,
-          }}
-        >
-          <div className="absolute top-1/3 left-10 w-32 h-32 border border-red-500/10 rotate-45" />
-          <div className="absolute bottom-1/3 right-10 w-24 h-24 border border-red-500/10 rotate-12" />
-        </div>
+        {/* Latar belakang statis, tidak lagi bergerak dengan scroll */}
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Enhanced Header */}
-        <div
-          className="text-center mb-16 animate-fade-in"
-          style={{
-            transform: `translateY(${scrollY * 0.05}px)`,
-          }}
-        >
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-6 elegant-font">
             {safeTranslate("services.title")}
           </h2>
@@ -335,12 +285,7 @@ const ServicesSection: React.FC = () => {
           ))}
         </BentoGrid>
 
-        <div
-          className="text-center mb-16 animate-fade-in"
-          style={{
-            transform: `translateY(${scrollY * 0.05}px)`,
-          }}
-        >
+        <div className="text-center my-16 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-6 elegant-font">
             Our Process
           </h2>
