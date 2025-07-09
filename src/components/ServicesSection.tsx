@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image"; // Diimpor untuk optimasi
+import Image from "next/image"; 
 import { useLanguage } from "../contexts/LanguageContext";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { Timeline } from "./ui/timeline";
@@ -15,13 +15,9 @@ import {
 } from "lucide-react";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 
-// Tidak lagi memerlukan ParticleStyle, useState, dan useEffect untuk scroll
-// karena efek yang berat telah dihilangkan.
-
 const ServicesSection: React.FC = () => {
   const { t } = useLanguage();
 
-  // Fungsi safeTranslate tetap dipertahankan
   const safeTranslate = (key: string) => {
     try {
       return t(key) || key;
@@ -126,12 +122,11 @@ const ServicesSection: React.FC = () => {
 
   const data = [
     {
-      title: "Consultation",
+      title: safeTranslate("process.consultation.title"),
       content: (
         <div>
           <p className="mb-8 text-xs font-normal md:text-sm text-neutral-200">
-            We discuss your project requirements, timeline, and technical
-            specifications to understand your vision and objectives.
+            {safeTranslate("process.consultation.desc")}
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -152,14 +147,12 @@ const ServicesSection: React.FC = () => {
         </div>
       ),
     },
-    // ... (Repeat the same Image component for other data items)
     {
-      title: "Planning",
+      title: safeTranslate("process.planning.title"),
       content: (
         <div>
           <p className="mb-8 text-xs font-normal md:text-sm text-neutral-200">
-            Detailed project planning including equipment selection, scheduling,
-            and technical preparation for optimal results.
+            {safeTranslate("process.planning.desc")}
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -181,12 +174,11 @@ const ServicesSection: React.FC = () => {
       ),
     },
     {
-      title: "Execution",
+      title: safeTranslate("process.execution.title"),
       content: (
         <div>
           <p className="mb-4 text-xs font-normal md:text-sm text-neutral-200">
-            Professional service delivery using industry-standard equipment and
-            techniques to capture or develop your project.
+            {safeTranslate("process.execution.desc")}
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -208,12 +200,11 @@ const ServicesSection: React.FC = () => {
       ),
     },
     {
-      title: "Post-Production",
+      title: safeTranslate("process.post-prod.title"),
       content: (
         <div>
           <p className="mb-4 text-xs font-normal text-neutral-200 md:text-sm text-neutral-200">
-            Professional editing, processing, and quality assurance to deliver
-            polished final products that exceed expectations.
+            {safeTranslate("process.post-prod.desc")}
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -235,12 +226,11 @@ const ServicesSection: React.FC = () => {
       ),
     },
     {
-      title: "Delivery",
+      title: safeTranslate("process.delivery.title"),
       content: (
         <div>
           <p className="mb-4 text-xs font-normal md:text-sm text-neutral-200">
-            Timely delivery of final products with ongoing support and
-            documentation for technical services.
+            {safeTranslate("process.delivery.desc")}
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -266,7 +256,6 @@ const ServicesSection: React.FC = () => {
   return (
     <section id="services" className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black">
-        {/* Latar belakang statis, tidak lagi bergerak dengan scroll */}
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -285,13 +274,12 @@ const ServicesSection: React.FC = () => {
           ))}
         </BentoGrid>
 
-        <div className="text-center my-16 animate-fade-in">
+        <div className="text-center mt-24 -mb-16 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-6 elegant-font">
-            Our Process
+            {safeTranslate("process.title")}
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            A proven methodology that ensures successful project delivery and
-            exceptional results.
+            {safeTranslate("process.subtitle")}
           </p>
         </div>
 

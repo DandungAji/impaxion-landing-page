@@ -23,7 +23,7 @@ const translations = {
 
     // Hero Section
     "hero.title": "IMPAXION",
-    "hero.subtitle": "Digital Excellence Redefined",
+    "hero.subtitle": "Where You Make an Impact from Your Actions",
     "hero.description":
       "We are a multidisciplinary digital team specializing in cutting-edge web development, mobile solutions, and creative design services that drive your business forward.",
     "hero.cta": "Explore Our Work",
@@ -70,6 +70,21 @@ const translations = {
       "Let's discuss your project and bring your vision to life with our expertise.",
     "services.cta.button": "Start Your Project",
 
+    // Process
+    "process.title": "Our Process",
+    "process.subtitle": "A proven methodology that ensures successful project delivery and exceptional results.",
+    "process.consultation.title": "Consultation",
+    "process.consultation.desc": "We discuss your project requirements, timeline, and technical specifications to understand your vision and objectives.",
+    "process.planning.title": "Planning",
+    "process.planning.desc": "Detailed project planning including equipment selection, scheduling, and technical preparation for optimal results.",
+    "process.execution.title": "Execution",
+    "process.execution.desc": "Professional service delivery using industry-standard equipment and techniques to capture or develop your project.",
+    "process.post-prod.title": "Post-Production",
+    "process.post-prod.desc": "Professional editing, processing, and quality assurance to deliver polished final products that exceed expectations.",
+    "process.delivery.title": "Delivery",
+    "process.delivery.desc": "Timely delivery of final products with ongoing support and documentation for technical services.",
+
+
     // Contact
     "contact.title": "Get In Touch",
     "contact.subtitle": "Ready to Start Your Project?",
@@ -100,7 +115,7 @@ const translations = {
 
     // Hero Section
     "hero.title": "IMPAXION",
-    "hero.subtitle": "Keunggulan Digital Didefinisikan Ulang",
+    "hero.subtitle": "Tempat Anda Membuat Dampak dari Aksi Anda",
     "hero.description":
       "Kami adalah tim digital multidisiplin yang mengkhususkan diri dalam pengembangan web terdepan, solusi mobile, dan layanan desain kreatif yang mendorong bisnis Anda maju.",
     "hero.cta": "Jelajahi Karya Kami",
@@ -146,6 +161,21 @@ const translations = {
     "services.cta.description":
       "Mari diskusikan proyek Anda dan wujudkan visi Anda dengan keahlian kami.",
     "services.cta.button": "Mulai Proyek Anda",
+    "services.consultation.title": "Konsultasi",
+
+    // Process
+    "process.title": "Proses Kami",
+    "process.subtitle": "Metodologi yang telah terbukti memastikan keberhasilan pelaksanaan proyek dan hasil yang luar biasa.",
+    "process.consultation.title": "Konsultasi",
+    "process.consultation.desc": "Kami akan mendiskusikan persyaratan proyek, jadwal, dan spesifikasi teknis Anda untuk memahami visi dan tujuan Anda.",
+    "process.planning.title": "Perencanaan",
+    "process.planning.desc": "Perencanaan proyek yang terperinci termasuk pemilihan peralatan, penjadwalan, dan persiapan teknis untuk hasil yang optimal.",
+    "process.execution.title": "Eksekusi",
+    "process.execution.desc": "Penyampaian layanan profesional dengan menggunakan peralatan dan teknik standar industri untuk mengabadikan atau mengembangkan proyek Anda.",
+    "process.post-prod.title": "Pasca-Produksi",
+    "process.post-prod.desc": "Pengeditan, pemrosesan, dan jaminan kualitas yang profesional untuk menghasilkan produk akhir yang melebihi ekspektasi.",
+    "process.delivery.title": "Penyerahan",
+    "process.delivery.desc": "Penyerahan produk akhir yang tepat waktu dengan dukungan dan dokumentasi berkelanjutan untuk layanan teknis.",
 
     // Contact
     "contact.title": "Hubungi Kami",
