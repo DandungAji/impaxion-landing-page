@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { BoxReveal } from "@/components/magicui/box-reveal";
 
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
   ssr: false,
@@ -49,38 +50,42 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
 
       <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div className="animate-slide-in-left">
-          <div className="">
+            <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
             <h1 className="text-6xl md:text-8xl font-bold elegant-font">
               <span className="gradient-text block leading-tight">
                 {safeTranslate("hero.title")}
               </span>
             </h1>
-            {/* <h2 className="text-2xl md:text-3xl text-gray-300 font-light">
-              {safeTranslate("hero.subtitle")}
-            </h2> */}
-          </div>
+            </BoxReveal>
 
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">
-            {safeTranslate("hero.description")}
-          </p>
+          <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
+            <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">
+              {safeTranslate("hero.description")}
+            </p>
+          </BoxReveal>
 
           <div className="flex flex-col sm:flex-row gap-6">
-            <button
-              onClick={() => scrollToSection("services")}
-              className="cta-button text-lg font-bold tracking-wide"
-            >
-              {safeTranslate("hero.cta")}
-              <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              variant="outline"
-              className="px-8 py-4 border-2 h-16 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 text-lg"
-            >
-              {safeTranslate("hero.contact")}
-            </Button>
+            <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="cta-button text-lg font-bold tracking-wide"
+              >
+                {safeTranslate("hero.cta")}
+                <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </button>
+            </BoxReveal>
+            
+            <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
+              <Button
+                onClick={() => scrollToSection("contact")}
+                variant="outline"
+                className="px-8 py-4 border-2 h-16 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 text-lg"
+              >
+                {safeTranslate("hero.contact")}
+              </Button>
+            </BoxReveal>
           </div>
         </div>
         <Card className="bg-foreground border-slate-700">
