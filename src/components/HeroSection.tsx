@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic"; 
+import dynamic from "next/dynamic";
 import { useLanguage } from "../contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,7 +10,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import { BoxReveal } from "@/components/magicui/box-reveal";
 
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
@@ -50,13 +50,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
 
       <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div className="animate-slide-in-left">
-            <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
+          <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
             <h1 className="text-6xl md:text-8xl font-bold elegant-font">
               <span className="gradient-text block leading-tight">
                 {safeTranslate("hero.title")}
               </span>
             </h1>
-            </BoxReveal>
+          </BoxReveal>
 
           <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
             <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mb-8">
@@ -76,7 +76,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
                 </span>
               </button>
             </BoxReveal>
-            
+
             <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
               <Button
                 onClick={() => scrollToSection("contact")}
@@ -92,9 +92,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
           <CardHeader>
             <CardTitle className="text-white">Impaxion</CardTitle>
             <CardDescription>@impaxionteam</CardDescription>
-            <CardDescription className="text-slate-300">{safeTranslate("hero.subtitle")}</CardDescription>
+            <CardDescription className="text-slate-300">
+              {safeTranslate("hero.subtitle")}
+            </CardDescription>
           </CardHeader>
-          <CardContent className="relative h-[400px] lg:h-[500px] animate-fade-in border border-slate-700 rounded-lg p-0 mx-6 mb-6">
+          <CardContent className="relative h-[300px] lg:h-[400px] animate-fade-in border border-slate-700 rounded-lg p-0 mx-6 mb-6">
             <Spline scene="https://prod.spline.design/Mr0SeX4k7SfO4xNl/scene.splinecode" />
           </CardContent>
         </Card>

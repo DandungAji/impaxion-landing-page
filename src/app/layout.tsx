@@ -6,7 +6,7 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Impaxion - Digital Excellence Redefined",
+  title: "Impaxion - Make an Impact from Actions",
   description:
     "A digital agency crafting exceptional experiences through innovative design and cutting-edge technology.",
 };

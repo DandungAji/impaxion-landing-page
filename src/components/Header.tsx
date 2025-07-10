@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import {
   Navbar,
@@ -60,18 +60,6 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
           <div className="flex items-center gap-2">
             <NavbarButton
               variant="primary"
-              onClick={() => setLanguage("en")}
-              className={`px-3 py-1 rounded transition-all duration-300 ${
-                language === "en"
-                  ? "bg-red-500 text-white"
-                  : "text-gray-400 hover:text-red-600"
-              }`}
-            >
-              EN
-            </NavbarButton>
-            <span className="text-gray-500">|</span>
-            <NavbarButton
-              variant="primary"
               onClick={() => setLanguage("id")}
               className={`px-3 py-1 rounded transition-all duration-300 ${
                 language === "id"
@@ -80,6 +68,18 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
               }`}
             >
               ID
+            </NavbarButton>
+            <span className="text-gray-500">|</span>
+            <NavbarButton
+              variant="primary"
+              onClick={() => setLanguage("en")}
+              className={`px-3 py-1 rounded transition-all duration-300 ${
+                language === "en"
+                  ? "bg-red-500 text-white"
+                  : "text-gray-400 hover:text-red-600"
+              }`}
+            >
+              EN
             </NavbarButton>
           </div>
         </NavBody>
