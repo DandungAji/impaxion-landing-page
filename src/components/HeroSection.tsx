@@ -1,21 +1,9 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import { useLanguage } from "../contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { BoxReveal } from "@/components/magicui/box-reveal";
-
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false,
-});
 
 interface HeroSectionProps {
   setActiveSection: (section: string) => void;
@@ -23,6 +11,8 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
   const { t } = useLanguage();
+  const whatsappUrl =
+    "https://wa.me/6282295775007?text=Hello%2C%20I%27d%20like%20to%20inquire%20about%20digital%20services.";
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -48,10 +38,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
 
-      <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <div className="animate-slide-in-left">
+      <div className="relative z-10 container mx-auto px-6">
+        <div className="animate-slide-in-left flex flex-col items-center text-center">
           <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
-            <h1 className="text-6xl md:text-8xl font-bold elegant-font">
+            <h1 className="text-4xl md:text-6xl font-bold brand-font mb-4">
               <span className="gradient-text block leading-tight">
                 {safeTranslate("hero.title")}
               </span>
@@ -64,7 +54,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
             </p>
           </BoxReveal>
 
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
               <button
                 onClick={() => scrollToSection("services")}
@@ -79,27 +69,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ setActiveSection }) => {
 
             <BoxReveal boxColor={"#EA3D3D"} duration={0.5}>
               <Button
-                onClick={() => scrollToSection("contact")}
+                asChild
                 variant="outline"
-                className="px-8 py-4 border-2 h-16 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 text-lg"
+                className="px-12 py-7 text-lg border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
               >
-                {safeTranslate("hero.contact")}
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  {safeTranslate("hero.contact")}
+                </a>
               </Button>
             </BoxReveal>
           </div>
         </div>
-        <Card className="bg-foreground border-slate-700">
-          <CardHeader>
-            <CardTitle className="text-white">Impaxion</CardTitle>
-            <CardDescription>@impaxionteam</CardDescription>
-            <CardDescription className="text-slate-300">
-              {safeTranslate("hero.subtitle")}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="relative h-[300px] lg:h-[400px] animate-fade-in border border-slate-700 rounded-lg p-0 mx-6 mb-6">
-            <Spline scene="https://prod.spline.design/Mr0SeX4k7SfO4xNl/scene.splinecode" />
-          </CardContent>
-        </Card>
       </div>
 
       {/* Enhanced Scroll Indicator

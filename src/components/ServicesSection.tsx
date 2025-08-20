@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image"; 
+import Image from "next/image";
 import { useLanguage } from "../contexts/LanguageContext";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { Timeline } from "./ui/timeline";
@@ -255,8 +255,7 @@ const ServicesSection: React.FC = () => {
 
   return (
     <section id="services" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black">
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
@@ -278,7 +277,7 @@ const ServicesSection: React.FC = () => {
           <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-6 elegant-font">
             {safeTranslate("process.title")}
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-16 xl:mb-0">
             {safeTranslate("process.subtitle")}
           </p>
         </div>
@@ -288,7 +287,7 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-40 h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        <div className="mt-40 -mb-32 h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
           <Spotlight />
           <div className="text-center p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
             <h1

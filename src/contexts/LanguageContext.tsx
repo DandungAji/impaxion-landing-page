@@ -26,7 +26,7 @@ const translations = {
     "hero.subtitle": "Where You Make an Impact from Your Actions",
     "hero.description":
       "We are a multidisciplinary digital team specializing in cutting-edge web development, mobile solutions, and creative design services that drive your business forward.",
-    "hero.cta": "Explore Our Work",
+    "hero.cta": "Explore Our Services",
     "hero.contact": "Get In Touch",
 
     // About Section
@@ -101,16 +101,16 @@ const translations = {
     "contact.message": "Message",
     "contact.send": "Send Message",
     "contact.info.title": "Contact Information",
-    "contact.info.email": "hello@impaxion.com",
-    "contact.info.phone": "+1 (555) 123-4567",
-    "contact.info.address": "Jakarta, Indonesia",
+    "contact.info.email": "weare@impaxion.my.id	",
+    "contact.info.phone": "+62 822 9577 5007",
+    "contact.info.address": "Bandung, Indonesia",
 
     // Footer
     "footer.description":
       "A digital agency crafting exceptional experiences through innovative design and cutting-edge technology.",
     "footer.quickLinks": "Quick Links",
     "footer.contactTitle": "Contact",
-    "footer.copyright": "© 2024 Impaxion. All rights reserved.",
+    "footer.copyright": "©2025 Impaxion. All rights reserved.",
   },
   id: {
     // Navigation
@@ -123,7 +123,7 @@ const translations = {
     "hero.subtitle": "Tempat Anda Membuat Dampak dari Aksi Anda",
     "hero.description":
       "Kami adalah tim digital multidisiplin yang mengkhususkan diri dalam pengembangan web terdepan, solusi mobile, dan layanan desain kreatif yang mendorong bisnis Anda maju.",
-    "hero.cta": "Jelajahi Karya Kami",
+    "hero.cta": "Jelajahi Layanan Kami",
     "hero.contact": "Hubungi Kami",
 
     // About Section
@@ -199,16 +199,16 @@ const translations = {
     "contact.message": "Pesan",
     "contact.send": "Kirim Pesan",
     "contact.info.title": "Informasi Kontak",
-    "contact.info.email": "hello@impaxion.com",
-    "contact.info.phone": "+62 123 456 7890",
-    "contact.info.address": "Jakarta, Indonesia",
+    "contact.info.email": "weare@impaxion.my.id	",
+    "contact.info.phone": "+62 822 9577 5007",
+    "contact.info.address": "Bandung, Indonesia",
 
     // Footer
     "footer.description":
       "Agensi digital yang menciptakan pengalaman luar biasa melalui desain inovatif dan teknologi terdepan.",
     "footer.quickLinks": "Tautan Cepat",
     "footer.contactTitle": "Kontak",
-    "footer.copyright": "© 2024 Impaxion. Hak cipta dilindungi undang-undang.",
+    "footer.copyright": "©2025 Impaxion. Hak cipta dilindungi undang-undang.",
   },
 };
 
